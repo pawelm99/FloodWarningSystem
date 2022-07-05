@@ -1,0 +1,74 @@
+﻿<Window x:Class="Projekt.DodajObszar"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projekt"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="DodajObszarZagrożony" Height="450" Width="800">
+
+    <Window.Resources>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+        
+           
+
+         
+            <Style x:Key="textBoxInError" TargetType="TextBox">
+                <Style.Triggers>
+                    <Trigger Property="Validation.HasError" Value="true">
+                        <Setter Property="ToolTip"
+                            Value="{Binding RelativeSource={x:Static RelativeSource.Self},
+                        Path=(Validation.Errors)[0].ErrorContent}"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+       
+    </Window.Resources>
+    <Window.DataContext>
+        <local:RegistrationViewModel/>
+    </Window.DataContext>
+    
+    <Grid>
+       
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.0,0" EndPoint="1,1">
+                <GradientStop Color="LightYellow" Offset="0.3"/>
+                <GradientStop Color="Aqua" Offset="0.4"/>
+                <GradientStop Color="Orange" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        
+        <TextBlock  HorizontalAlignment="Center" FontSize="26"  Margin="0,40,0,328">Wyperłnij Pola aby dodać obszar zagrożony</TextBlock>
+        <StackPanel HorizontalAlignment="Left" Width="167" Margin="345,136,0,156">
+            <TextBlock Text="DataPomiaru" FontSize="20"  Foreground="LightCoral" FontWeight="Bold" ></TextBlock>
+            <TextBlock Text="Data:" ></TextBlock>
+            <TextBox  x:Name="TextData" Style ="{StaticResource textBoxInError}" Text="{Binding Data, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"></TextBox>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Left" Width="168" Margin="172,136,0,125">
+            <TextBlock Text="PomiarRzeki" FontSize="20"  Foreground="LightCoral" FontWeight="Bold"  ></TextBlock>
+            <TextBlock Text="NazwaRzeki:" ></TextBlock>
+            <TextBox  x:Name="TextNazwaRzekiPK" Style ="{StaticResource textBoxInError}" Text="{Binding NazwaRzeki, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"></TextBox>
+            <TextBlock Text="PoziomWody:" ></TextBlock>
+            <TextBox  x:Name="TextPoziomWody" Style ="{StaticResource textBoxInError}" Text="{Binding PoziomWody, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"></TextBox>
+            <TextBlock Text="PoziomWodyStandardowy:" ></TextBlock>
+            <TextBox  x:Name="TextPoziomWodyStand" Style ="{StaticResource textBoxInError}" Text="{Binding StaPoziomWody, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"></TextBox>
+
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Left" Width="167" Margin="517,131,0,130">
+            <TextBlock Text="Obszar Zagrożony" FontSize="20" Foreground="LightCoral" FontWeight="Bold"></TextBlock>
+            <TextBlock Text="Miejscowość:" ></TextBlock>
+            <TextBox  x:Name="TextMiejscowość" Style ="{StaticResource textBoxInError}" Text="{Binding Miejscowosc, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"></TextBox>
+            <TextBlock Text="Miasto:" ></TextBlock>
+            <TextBox  x:Name="TextMiasto" Style ="{StaticResource textBoxInError}" Text="{Binding Miasto, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"></TextBox>
+
+        </StackPanel>
+        <Button FontWeight="Bold" FontSize="16" x:Name="ClickFinal" Click="ClickFinal_Click" Height="30" Width="400" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="70" Visibility="Visible">Zatwierdź</Button>
+    </Grid>
+</Window>

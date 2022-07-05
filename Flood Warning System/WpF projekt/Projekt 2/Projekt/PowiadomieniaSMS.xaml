@@ -1,0 +1,52 @@
+﻿<Window x:Class="Projekt.PowiadomieniaSMS"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projekt"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="PowiadomieniaSMS" Height="450" Width="800">
+    <Window.Resources>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.0,0" EndPoint="1,1">
+                <GradientStop Color="LightYellow" Offset="0.3"/>
+                <GradientStop Color="Aqua" Offset="0.4"/>
+                <GradientStop Color="Orange" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+
+        <TextBlock  HorizontalAlignment="Center" FontSize="26"    FontWeight="Bold" Margin="0,20,0,362">Powiadom osoby zagrożone</TextBlock>
+
+        <TextBlock FontSize="20"  Foreground="LightCoral" FontWeight="Bold" HorizontalAlignment="Right" Margin="0,0,200,250"  Width="200" Height="30" >Numery Telefonów:</TextBlock>
+        <TextBlock FontSize="20"  Foreground="LightCoral" FontWeight="Bold" HorizontalAlignment="Left" Margin="10,0,0,250"  Width="200" Height="30" >Obszary zagrożone:</TextBlock>
+        <Button FontWeight="Bold" FontSize="16" Click="Button_Click"  Width="100" Height="50" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10">Zatwierdź</Button>
+        <WrapPanel Height="250" Width="360" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="40,0,0,70">
+
+            <ListBox x:Name="listboxObszary"   Loaded="ListBoxNumery_Loaded" HorizontalAlignment="Left" Width="100" Height="auto" SelectionChanged="listboxObszary_SelectionChanged" ></ListBox>
+
+
+        </WrapPanel>
+        <WrapPanel Height="250" Width="360" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,40,70">
+
+            <ListBox x:Name="ListBoxNumery" Loaded="ListBoxNumery_Loaded"  Focusable="False" IsEnabled="False" HorizontalAlignment="Left" Width="100" Height="auto"  ></ListBox>
+
+
+        </WrapPanel>
+
+
+
+
+
+    </Grid>
+</Window>

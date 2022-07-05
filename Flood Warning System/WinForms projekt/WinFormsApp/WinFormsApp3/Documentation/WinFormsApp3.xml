@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WinFormsApp3</name>
+    </assembly>
+    <members>
+        <member name="F:WinFormsApp3.AboutText.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:WinFormsApp3.AboutText.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:WinFormsApp3.AboutText.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:WinFormsApp3.Ostrzeganie.#ctor(System.Int32)">
+            <summary>
+            Formularz przyjmuje numer pozycji wiersza którego zaznaczyliśmy.
+            </summary>
+            <param name="ilosc"></param>
+        </member>
+        <member name="M:WinFormsApp3.Ostrzeganie.Ostrzeganie_Load(System.Object,System.EventArgs)">
+            <summary>
+            Następuje tutaj wyszukanie w bazie jaką służbę ratunkową posiada dany obszar.
+            Jeśli posiada checkBox zostanie odblokwoany
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:WinFormsApp3.Ostrzeganie.funEnableButton1">
+            <summary>
+            Odblokuje przycisk jeśli zaznaczymy checkBoxa
+            </summary>
+        </member>
+        <member name="M:WinFormsApp3.Ostrzeganie.button1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Utworzenie nowego formularza oraz wyświetlenie 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:WinFormsApp3.Ostrzeganie.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:WinFormsApp3.Ostrzeganie.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:WinFormsApp3.Ostrzeganie.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:WinFormsApp3.Program.Main">
+            <summary>
+             The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:WinFormsApp3.Properties.Resources">
+            <summary>
+              Klasa zasobu wymagająca zdefiniowania typu do wyszukiwania zlokalizowanych ciągów itd.
+            </summary>
+        </member>
+        <member name="P:WinFormsApp3.Properties.Resources.ResourceManager">
+            <summary>
+            Zwraca buforowane wystąpienie ResourceManager używane przez tę klasę.
+            </summary>
+        </member>
+        <member name="P:WinFormsApp3.Properties.Resources.Culture">
+            <summary>
+              Przesłania właściwość CurrentUICulture bieżącego wątku dla wszystkich
+              przypadków przeszukiwania zasobów za pomocą tej klasy zasobów wymagającej zdefiniowania typu.
+            </summary>
+        </member>
+        <member name="M:WinFormsApp3.Main.button1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Ustawienie eventu jeśli klikniemy button1
+            Podpięcie eventu errorTime
+            Kontrolka będzie realizowana w dalszym projekcie 
+            
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:WinFormsApp3.Main.errorTime(System.Object,System.EventArgs)">
+            <summary>
+            errorTime odlicza czas po czym kasuje zdarzenie errorProvider1
+            Metoda async nie blokuje aplikacji
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:WinFormsApp3.Main.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:WinFormsApp3.Main.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:WinFormsApp3.Main.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:WinFormsApp3.Tabela.Tabela_Load(System.Object,System.EventArgs)">
+            <summary>
+            Async metoda ładowania danych z bazy. 
+            Mijescowosc oraz Miasto 
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:WinFormsApp3.Tabela.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:WinFormsApp3.Tabela.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:WinFormsApp3.Tabela.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:WinFormsApp3.WspieraneObszary.button1_Click(System.Object,System.EventArgs)">
+            <summary>
+            Szuka w bazie frazy wyszukania po czym tworzy formularz
+            z wynikem wyszukania
+            Ustawia errorProvidera jeśli nie wpiszemy tekstu
+            /// </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:WinFormsApp3.WspieraneObszary.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:WinFormsApp3.WspieraneObszary.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:WinFormsApp3.WspieraneObszary.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:WinFormsApp3.WynikWyszukania.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:WinFormsApp3.WynikWyszukania.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:WinFormsApp3.WynikWyszukania.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:WinFormsApp3.ZagrożoneObszary.Analiza_Load(System.Object,System.EventArgs)">
+            <summary>
+            Czyta z bazy obszary zagrożone. 
+            Wypisuje w listBoxie po czym wyłącza 
+            button1
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:WinFormsApp3.ZagrożoneObszary.AllIndex(System.Int32)">
+            <summary>
+            Funkcja synchronizuje zaznaczanie tekstu
+            </summary>
+            <param name="index"></param>
+        </member>
+        <member name="M:WinFormsApp3.ZagrożoneObszary.button2_Click(System.Object,System.EventArgs)">
+            <summary>
+            selectedIndexlistBox jest przekazywany do następnego
+            formularza który pokazuje który wybraliśmy obszar do 
+            powiadomienia
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:WinFormsApp3.ZagrożoneObszary.listBox1_SelectedIndexChanged(System.Object,System.EventArgs)">
+            <summary>
+            Przekazywanie do funkcji ALLIndex 
+            który index został przez nas kliknięty
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:WinFormsApp3.ZagrożoneObszary.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:WinFormsApp3.ZagrożoneObszary.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:WinFormsApp3.ZagrożoneObszary.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+    </members>
+</doc>

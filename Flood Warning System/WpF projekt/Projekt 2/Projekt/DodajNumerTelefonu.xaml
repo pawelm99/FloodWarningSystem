@@ -1,0 +1,61 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Projekt"
+        xmlns:System="clr-namespace:System;assembly=System.Runtime" x:Class="Projekt.DodajNumerTelefonu"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="DodajNumerTelefonu"   Height="500" Width="500">
+    <Window.Resources>
+
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+
+
+
+        <Style x:Key="textBoxInError" TargetType="{x:Type TextBox}">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="true">
+                    <Setter Property="ToolTip"
+                            Value="{Binding (Validation.Errors)[0].ErrorContent, RelativeSource={x:Static RelativeSource.Self}}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+    </Window.Resources>
+    <Window.DataContext>
+        <local:RegistrationViewModel/>
+    </Window.DataContext>
+    <Grid>
+
+
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.0,0" EndPoint="1,1">
+                <GradientStop Color="LightYellow" Offset="0.3"/>
+                <GradientStop Color="Aqua" Offset="0.4"/>
+                <GradientStop Color="Orange" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <TextBlock Margin="10,100,10,10" Text="Miejscowość:" FontSize="20" Foreground="LightCoral" FontWeight="Bold"/>
+        <ListView Width="120" Height="150" HorizontalAlignment= "Left" Margin="10,0,0,30" x:Name="ListBoxMiejsc"></ListView>
+        <TextBlock HorizontalAlignment="Center" FontSize="26" ><Run Text="Dodaj Numer Telefonu"/></TextBlock>
+        <StackPanel HorizontalAlignment="Center" Height="300" Width="200" Margin="0,69,0,56">
+            <TextBlock Text="Powiadomienie SMS" FontSize="20" Foreground="LightCoral" FontWeight="Bold"/>
+            <TextBlock Text="Numer Telefonu:" />
+            <TextBox  x:Name="TextNumerTelefonuDN" Style ="{StaticResource textBoxInError}" Text="{Binding NumerTelefonuDN, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+            
+            
+            <TextBlock Text="Stan Zagrożenia:" />
+            <TextBox  x:Name="TextStanDN" Style ="{StaticResource textBoxInError}" Text="{Binding StanZagrożeniaDN, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+            <TextBlock Text="Miasto:" />
+            <TextBox  x:Name="TextMiastoDN" Style ="{StaticResource textBoxInError}" Text="{Binding MistoDN, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
+            <Button FontWeight="Bold" FontSize="16" Width="100" Height="40" Margin="0,40,0,0" Click="Button_Click" Content="Zatwierdź"/>
+        </StackPanel>
+
+
+    </Grid>
+</Window>
